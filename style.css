@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100%;
+    margin: auto;
+    background-color: rgb(177, 203, 226);
+}
+
+.title {
+    margin: 0 0 2vw 0;
+}
+
+.sub_title {
+    margin: 0 0 1vw 0;
+}
+
+.main_contents {
+    width: 30vw;
+    height: 100%;
+    margin: auto;
+    padding: 3vw;
+    background-color: white;
+}
+
+.form_name input {
+    width: 100%;
+    height: 7ch;
+    margin: 1vh 0 2vh 0;
+}
+
+.content_name {
+    margin: 0 0 2vw 0;
+}
+
+.contents_age_gender {
+    margin: 0 0 2vw 0;
+}
+
+.content_gender {
+    margin: 0 0 1vh 0;
+}
+
+.content_gender input {
+    margin: 0 0 2vh 0;
+}
+
+.content_age input {
+    width: 8ch;
+    height: 7ch;
+    margin: 1vh 0 2vh 0;
+    text-align: center;
+}
+
+span {
+    margin: 0 0 0 1vw;
+    font-size: small;
+    color: red;
+}
+
+button {
+    width: 100%;
+    height: 7ch;
+    margin: 1vh 0;
+}

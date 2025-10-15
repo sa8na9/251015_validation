@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="main_contents">
+
+        <h1 class="title">あなたの情報を入力してください</h1>
+
+        <div class="content_name">
+
+            <h1 class="sub_title">名前</h1>
+
+            <form class="form_name">
+                <label for="sei_kanji">姓<span>必須</span><br>
+                    <input type="text" name="sei_kanji" id="sei_kanji" required><br>
+                </label>
+
+                <label for="mei_kanji">名<span>必須</span><br>
+                    <input type="text" name="mei_kanji" id="mei_kanji" required><br>
+                </label>
+
+                <label for="shi_kana">氏（カタカナ）<span>必須</span><br>
+                    <input type="text" name="shi_kana" id="shi_kana" required><br>
+                </label>
+
+                <label for="mei_kana">名（カタカナ）<span>必須</span><br>
+                    <input type="text" name="mei_kana" id="mei_kana" required><br>
+                </label>
+            </form>
+
+        </div>
+
+        <div class="contents_age_gender">
+
+            <h1 class="sub_title">年齢・性別</h1>
+            <form class="form_age_gender">
+
+                <div class="content_gender">
+                    性別<span>必須</span><br>
+                    <input type="radio" id="men" name="radio_gender"><label for="men" required> 男性</label><br>
+                    <input type="radio" id="women" name="radio_gender"><label for="women" required> 女性</label><br>
+                    <input type="radio" id="other" name="radio_gender"><label for="other" required> 無回答・その他</label><br>
+                </div>
+
+                <div class="content_age">
+                    <label for="age">年齢<span>必須</span><br>
+                        <input type="number" id="age" name="age"><br>
+                    </label>
+                </div>
+
+            </form>
+
+        </div>
+
+        <button id="button_next">次へ</button><br>
+        <button>戻る</button>
+    
+    </div><!-- /main_contents -->
+    <script src="script.js"></script>
+</body>
+</html>
