@@ -12,11 +12,23 @@ function displayError(subjectId, message) {
 
 // エラー文削除関数
 function deleteError(subjectId) {
-    const correctSubject = document.getElementById(`error_${subjectId}`)
+    const correctSubject = document.getElementById(`error_${subjectId}`);
     // 対象が正常に入力されていたら
     if (correctSubject) {
         correctSubject.textContent = ''; // エラー文削除
     }
+}
+
+// 枠線を赤にする関数
+function changeBorderColor(subjectId) {
+    const subjectBorder = document.getElementById(`${subjectId}`);
+    subjectBorder.style.borderColor = 'red'
+}
+
+// 枠線の色をもとに戻す関数
+function undoBorderColor(subjectId) {
+    const subjectBorder = document.getElementById(`${subjectId}`);
+    subjectBorder.style.borderColor = ''
 }
 
 // 入力値チェック関数
@@ -27,7 +39,7 @@ function inputCheck(user_input) {
     if (user_input.value === '') {
         displayError(user_input.id, '入力は必須です');
         checkList[user_input.id] = false;
-        console.log(checkList[user_input.id]);
+        changeBorderColor(user_input.id);
         switchingButton();
         return; // 入力されていなければ以下のチェックは不要
     }
@@ -40,8 +52,10 @@ function inputCheck(user_input) {
             if (/[^a-zA-Zー\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF]/.test(user_input.value)) {
                 checkList[user_input.id] = false;
                 error_message = '数字、記号、空白は使えません'
+                changeBorderColor(user_input.id)
             } else {
                 checkList[user_input.id] = true;
+                undoBorderColor(user_input.id)
             }
             break;
 
@@ -51,8 +65,10 @@ function inputCheck(user_input) {
             if (/[^ァ-ヶー]/.test(user_input.value)) {
                 checkList[user_input.id] = false;
                 error_message = 'カタカナで入力してください'
+                changeBorderColor(user_input.id)
             } else {
                 checkList[user_input.id] = true;
+                undoBorderColor(user_input.id)
             }
             break;
 
@@ -60,8 +76,10 @@ function inputCheck(user_input) {
             if (/[^0-9]/.test(user_input.value)) {
                 checkList[user_input.id] = false;
                 error_message = '半角数字で入力してください';
+                changeBorderColor(user_input.id)
             } else {
                 checkList[user_input.id] = true;
+                undoBorderColor(user_input.id)
             }
     }
 
@@ -70,7 +88,6 @@ function inputCheck(user_input) {
     } else {
         deleteError(user_input.id);
     }
-    console.log(checkList[user_input.id]);
     isCheckedGender();
     switchingButton();
 };
