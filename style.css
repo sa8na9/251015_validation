@@ -88,6 +88,28 @@ span {
 
 button {
     width: 100%;
-    height: 7ch;
+    height: 6ch;
     margin: 1vh 0;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.btn_next:disabled {
+    border: none;
+    background-color: darkgrey;
+    color: rgb(195, 195, 195);
+}
+
+.btn_next {
+    border: none;
+    background-color: blue;
+    color: white;
+}
+
+.btn_back {
+    border: 1px solid;
+    border-color: blue;
+    background-color: white;
+    color: blue;
 }
